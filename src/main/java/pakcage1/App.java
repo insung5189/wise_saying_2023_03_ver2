@@ -11,22 +11,21 @@ public class App {
 
     public void run() {
         System.out.println("==명언 앱==");
+        int wiseSayingNum = 1;
         while (true) {
-            System.out.printf("명령 입력 : ");
+            System.out.printf("명령) : ");
             String command = sc.nextLine().trim();
-            if (command.equals("등록")) {
-                System.out.printf("명언 입력 : ");
-                String wiseSaying = sc.nextLine().trim();
-                System.out.printf("작가 입력 : ");
-                String wiseSaying2 = sc.nextLine().trim();
-            }
             if (command.equals("종료")) {
                 break;
+            } else if (command.equals("등록")) {
+                System.out.printf("명언 : ");
+                String wiseSaying = sc.nextLine().trim();
+                System.out.printf("작가 : ");
+                String wiseSayingAuthor = sc.nextLine().trim();
+                System.out.println(wiseSayingNum + "번 명언이 등록되었습니다.");
+                wiseSayingNum++;
+                }
             }
-        }
-
-        // 받은 글자 "종료"일 때 프로그램 종료
-
     }
 }
 /* level-2
@@ -34,4 +33,23 @@ public class App {
 명언 :
 작가 :
 명령 :
+* */
+
+/* level-3
+명령 : 등록
+명언 : 명언1
+작가 : 작가1
+1번 명언이 등록되었습니다.
+명령 : 종료
+* */
+
+/* level-4
+명령 : 등록
+명언 : 명언1
+작가 : 작가1
+1번 명언이 등록되었습니다.
+명령 : 등록
+명언 : 명언1
+작가 : 작가1
+2번 명언이 등록되었습니다.
 * */
