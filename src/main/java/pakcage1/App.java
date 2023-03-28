@@ -14,6 +14,12 @@ public class App {
         while (true) {
             System.out.printf("명령 입력 : ");
             String command = sc.nextLine().trim();
+            if (command.equals("등록")) {
+                System.out.printf("명언 입력 : ");
+                String wiseSaying = sc.nextLine().trim();
+                System.out.printf("작가 입력 : ");
+                String wiseSaying2 = sc.nextLine().trim();
+            }
             if (command.equals("종료")) {
                 break;
             }
@@ -23,3 +29,9 @@ public class App {
 
     }
 }
+/* level-2
+명령 : 등록
+명언 :
+작가 :
+명령 :
+* */
