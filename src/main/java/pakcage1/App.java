@@ -11,8 +11,10 @@ public class App {
     }
 
     public void run() {
+        ArrayList<WiseSayingControl> sayings = new ArrayList<>();
+
         System.out.println("==명언 앱==");
-        int wiseSayingNum = 1;
+        int wiseSayingNum = 0;
         while (true) {
             System.out.printf("명령) : ");
             String command = sc.nextLine().trim();
@@ -23,8 +25,20 @@ public class App {
                 String wiseSaying = sc.nextLine().trim();
                 System.out.printf("작가 : ");
                 String wiseSayingAuthor = sc.nextLine().trim();
+
+                int id = wiseSayingNum + 1;
+                String content = wiseSaying;
+                String authorName = wiseSayingAuthor;
+                WiseSayingControl wiseSayingControl = new WiseSayingControl(id, content, authorName);
+                sayings.add(wiseSayingControl);
                 System.out.println(wiseSayingNum + "번 명언이 등록되었습니다.");
                 wiseSayingNum++;
+            } else if (command.equals("목록")) {
+                System.out.println("번호 / 작가 / 명언");
+                System.out.println("------------------------");
+                System.out.println("번호 / 작가 / 명언");
+                System.out.printf("명언 수 : " + sayings.size() + "\n");
+                String wiseSaying = sc.nextLine().trim();
             }
         }
     }
