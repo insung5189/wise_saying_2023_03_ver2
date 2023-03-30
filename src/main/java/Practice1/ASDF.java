@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class ASDF {
     public static void main(String[] args) {
-        Sol1.run();
+
+        Sol2.run();
     }
 }
-class Sol1 {
+class Sol2 {
     public static void run() {
         Scanner sc = new Scanner(System.in); // sc라는 변수에 스캐너 객체를 담아서 실행해줌.
         ArrayList<Integer> numbers = new ArrayList<>(); // ArrayList<>를 이용해서 numbers라는 변수에 arraylist 기능을 담아줌(*numbers = 가변적 배열*)
@@ -20,7 +21,7 @@ class Sol1 {
 
             if (num1 == -1) { // 반복문에서 break;가 실행되게 하기 위한 조건문.
                 System.out.println("입력을 종료합니다."); // 입력을 종료한다는 안내문
-                break; // 조건문 내부에서 조건에 부합하면 break;가 실행되면서
+                break; // 조건문 내부에서 조건에 부합하면 break;가 실행되면서 반복문이 멈춤.
             }
 
             numbers.add(num1); // ArrayList기능을 담아준 numbers에 num1변수를 담아서 배열 인덱스로 추가해줌.
