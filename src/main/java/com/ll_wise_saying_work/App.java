@@ -1,5 +1,8 @@
 package com.ll_wise_saying_work;
 
+import com.ll_wise_saying_work.system.controller.SystemController;
+import com.ll_wise_saying_work.wiseSaying.controller.WiseSayingController;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,13 +17,19 @@ public class App {
         ArrayList<WiseSayingControl> sayings = new ArrayList<>();
 
         System.out.println("==명언 앱==");
+        SystemController systemController = new SystemController();
+        WiseSayingController wiseSayingController = new WiseSayingController();
+
         int wiseSayingNum = 0;
         while (true) {
             System.out.printf("명령(등록, 목록, 종료) : ");
             String command = sc.nextLine().trim();
             if (command.equals("종료")) {
+                systemController.exit();
+
                 break;
             } else if (command.equals("등록")) {
+                systemController.write();
                 System.out.printf("명언 : ");
                 String wiseSaying = sc.nextLine().trim();
                 System.out.printf("작가 : ");
@@ -40,6 +49,7 @@ public class App {
                 wiseSayingNum++; // 증가
 
             } else if (command.equals("목록")) {
+                wiseSayingController.목록();
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("-".repeat(30));
 
