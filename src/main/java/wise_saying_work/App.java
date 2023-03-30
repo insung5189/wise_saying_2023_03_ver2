@@ -45,7 +45,7 @@ public class App {
 
                 for (int i = 0; i < sayings.size(); i++) {
                     WiseSayingControl wiseSayingControl = sayings.get(i);
-                    System.out.printf("%d / %s / %s \n", wiseSayingControl.getId(), wiseSayingControl.getContent(), wiseSayingControl.getAuthorName());
+                    System.out.printf("%d / %s / %s \n", wiseSayingControl.getId(), wiseSayingControl.getAuthorName(), wiseSayingControl.getContent());
                 }
 
                 System.out.printf("총 명언 수 : " + sayings.size() + "\n");
