@@ -1,4 +1,4 @@
-package wise_saying_work;
+package com.ll_wise_saying_work;
 
 import java.util.ArrayList;
 import java.util.Scanner;
