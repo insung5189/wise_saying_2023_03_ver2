@@ -1,4 +1,4 @@
-package pakcage1;
+package wise_saying_work;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class App {
         System.out.println("==명언 앱==");
         int wiseSayingNum = 0;
         while (true) {
-            System.out.printf("명령) : ");
+            System.out.printf("명령(등록, 목록, 종료) : ");
             String command = sc.nextLine().trim();
             if (command.equals("종료")) {
                 break;
@@ -27,18 +27,31 @@ public class App {
                 String wiseSayingAuthor = sc.nextLine().trim();
 
                 int id = wiseSayingNum + 1;
+
                 String content = wiseSaying;
                 String authorName = wiseSayingAuthor;
+
                 WiseSayingControl wiseSayingControl = new WiseSayingControl(id, content, authorName);
+
                 sayings.add(wiseSayingControl);
+
                 System.out.println(wiseSayingNum + "번 명언이 등록되었습니다.");
-                wiseSayingNum++;
+
+                wiseSayingNum++; // 증가
+
             } else if (command.equals("목록")) {
                 System.out.println("번호 / 작가 / 명언");
-                System.out.println("------------------------");
-                System.out.println("번호 / 작가 / 명언");
-                System.out.printf("명언 수 : " + sayings.size() + "\n");
-                String wiseSaying = sc.nextLine().trim();
+                System.out.println("-".repeat(30));
+
+                for (int i = 0; i < sayings.size(); i++) {
+                    WiseSayingControl wiseSayingControl = sayings.get(i);
+                    System.out.printf("%d / %s / %s \n", wiseSayingControl.getId(), wiseSayingControl.getContent(), wiseSayingControl.getAuthorName());
+                }
+
+                System.out.printf("총 명언 수 : " + sayings.size() + "\n");
+//                String wiseSaying = sc.nextLine().trim();
+            } else {
+                System.out.println("명령을 똑바로 입력하쎄용.");
             }
         }
     }

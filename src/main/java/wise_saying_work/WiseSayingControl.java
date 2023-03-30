@@ -1,11 +1,11 @@
-package pakcage1;
+package wise_saying_work;
 
 public class WiseSayingControl {
     private int id;
     private String content;
     private String authorName;
 
-    WiseSayingControl(int id, String content, String authorName) {
+    public WiseSayingControl(int id, String content, String authorName) {
         this.id = id;
         this.content = content;
         this.authorName = authorName;

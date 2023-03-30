@@ -1,4 +1,4 @@
-package pakcage1;
+package wise_saying_work;
 
 import java.util.Scanner;
 
