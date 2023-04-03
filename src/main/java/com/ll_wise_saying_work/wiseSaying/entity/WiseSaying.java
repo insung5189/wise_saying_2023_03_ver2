@@ -26,4 +26,12 @@ public class WiseSaying {
     public String getAuthorName() {
         return this.authorName;
     }
+
+    public void setContents() {
+
+    }
+
+    public void setAuthorName() {
+
+    }
 }

@@ -11,5 +11,4 @@ public class SystemController {
     public void 종료() {
         System.out.println("프로그램이 종료되었습니다.");
     }
-
 }
