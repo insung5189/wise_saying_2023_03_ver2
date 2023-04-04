@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WiseSayingController {
-
     ArrayList<WiseSaying> wiseSayings = new ArrayList<>(); // wiseSayings라는 변수에 ArrayList를 적용하여 가변적으로 데이터 입력이 가능한 배열 생성.
     // wiseSayings = 데이터를 입력할때마다 데이터 양에 따라서 인덱스도 자동으로 늘어나는 배열(ArrayList를 사용했기때문.)
     int wiseSayingNum = 1; // 명언 갯수를 카운트하기위해 초기화된 변수. (아래 조건문 안에서 조건에 만족하면 증가시켜줄거임.)
@@ -53,7 +52,7 @@ public class WiseSayingController {
         // repeat(반복할 숫자입력);을 사용해서 일일이 출력문을 입력하지 않고 같은 내용을 반복할 수 있다.
 
         for (int i = 0; i < wiseSayings.size(); i++) {
-            // 번호, 명언, 작가 값이 입력된 wiseSayings배열을 배열의 길이만큼(wiseSayings.size())순회하면서 각 데이터를 나열하도록 함.
+            // 번호, 명언, 작가 값이 입력된 wiseSayings배열을 배열의 길이만큼(wiseSayings.size())순회하면서 각 데이터를 나열하여 참조하도록 함.
             WiseSaying wiseSaying = wiseSayings.get(i);
             // 클래스형 변수 wiseSaying에 wiseSayings 배열의 값들을 get으로 가져오면서 그 인덱스값으로 i값을 넣어 증가하도록한 뒤
             System.out.printf("%d / %s / %s \n", wiseSaying.getId(), wiseSaying.getAuthorName(), wiseSaying.getContent());
@@ -62,7 +61,6 @@ public class WiseSayingController {
 
         System.out.printf("총 명언 수 : " + wiseSayings.size() + "\n"); // wiseSayings.size();를 이용해서 배열의 길이를 불러오고 총 명언수로 표시함.
 //                String wiseSaying = sc.nextLine().trim();
-
     }
 
     public void 삭제(Rq rq) {
@@ -107,7 +105,7 @@ public class WiseSayingController {
         } // 삭제관련된 것만 집중하는 구문.
         WiseSaying wiseSaying = findById(id);
 
-        if (wiseSaying == null) {
+        if (wiseSayings == null) {
             System.out.println("수정할 데이터가 없습니다.");
             return;
         }
@@ -126,9 +124,5 @@ public class WiseSayingController {
         System.out.printf("%d번 명언이 수정되었습니다.\n", id);
 
     }
-
-
-
-
 
 }
