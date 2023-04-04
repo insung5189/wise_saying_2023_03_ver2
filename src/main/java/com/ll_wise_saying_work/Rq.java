@@ -59,7 +59,7 @@ public class Rq {
         return this.actionCode; // commandBits[0]이 할당된 actionCode를 반환하도록 함.
     }
 
-    public String getParams(String name) { //
+    public String getParams(String name) {
         return params.get(name);
     }
 
@@ -70,6 +70,5 @@ public class Rq {
             System.out.println("숫자가 아닌 값이 들어와서 에러가 발생했습니다.");
             return defaultValue;
         }
-//    return defaultValue;
     }
 }

@@ -29,11 +29,11 @@ public class WiseSaying {
         return this.authorName; // getAuthorName()로 인스턴스변수 authorName를 반환
     }
 
-    public void setContents() {
-
+    public void setContents(String content) {
+        this.content = content;
     }
 
-    public void setAuthorName() {
-
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 }

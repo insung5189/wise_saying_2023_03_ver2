@@ -42,6 +42,7 @@ public class App {
                     break;
                 case "수정":
                     wiseSayingController.수정(rq); // WiseSayingController 클래스에 있는 수정 메서드를 rq생성자 매개변수를 받아 호출
+                    break;
                 default: // 아무 단어도 매칭되지 않으면
                     System.out.println(">>명령을 똑바로 입력하쎄용.\n"); // 명령을 똑바로 입력하라는 출력문
             }

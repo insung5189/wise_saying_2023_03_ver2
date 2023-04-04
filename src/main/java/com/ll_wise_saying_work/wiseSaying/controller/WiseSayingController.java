@@ -87,39 +87,41 @@ public class WiseSayingController {
         }
 
          */
-        // 입력된 id와 일치하는 명언객체 찾기
-        WiseSaying wiseSaying = findById(id);
-        // 저장된 데이터로 전체데이터에서 삭제하는 메서드를 이용해서 삭제한다.
-        wiseSayings.remove(wiseSaying); // remove라는 함수를 사용
+        WiseSaying wiseSaying = findById(id); // 입력된 id와 일치하는 명언객체 찾기
+        System.out.printf("%d번 명언을 정말 삭제하시겠습니까?(Y / N) : ", id);
+        String yesOrNo = Container.getScanner().nextLine().trim();
 
-        System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
-
+        if (yesOrNo.equals("y")||yesOrNo.equals("Y")) {
+            wiseSayings.remove(wiseSaying); // remove라는 함수를 사용
+            // 저장된 데이터로 전체데이터에서 삭제하는 메서드를 이용해서 삭제한다.
+            System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
+        } else if (yesOrNo.equals("n")||yesOrNo.equals("N")) {
+            System.out.println("명언 삭제가 취소되었습니다.");
+        }
     }
 
     public void 수정(Rq rq) {
         int id = rq.getIntParam("id", -1);
-
         if (id == -1) {
             System.out.println("정수가 아닌 다른 값을 입력하셨습니다. 정수를 똑바로 입력해주세요.");
             return;
         } // 삭제관련된 것만 집중하는 구문.
         WiseSaying wiseSaying = findById(id);
-
         if (wiseSayings == null) {
             System.out.println("수정할 데이터가 없습니다.");
             return;
         }
 
-        System.out.printf("기존 명언 %s", wiseSaying.getContent());
-        System.out.println("수정할 명언 : ");
+        System.out.printf("기존 명언 : %s\n", wiseSaying.getContent());
+        System.out.print("수정할 명언 : ");
         String content = Container.getScanner().nextLine().trim();
 
-        System.out.printf("기존 작가 %s", wiseSaying.getAuthorName());
-        System.out.println("수정할 작가이름 : ");
+        System.out.printf("기존 작가 : %s\n", wiseSaying.getAuthorName());
+        System.out.print("수정할 작가이름 : ");
         String authorName = Container.getScanner().nextLine().trim();
 
-        wiseSaying.setContents();
-        wiseSaying.setAuthorName();
+        wiseSaying.setContents(content);
+        wiseSaying.setAuthorName(authorName);
 
         System.out.printf("%d번 명언이 수정되었습니다.\n", id);
 
