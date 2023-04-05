@@ -9,8 +9,12 @@ public class Rq {
 
     public Rq(String command) {
         command = Container.getScanner().nextLine().trim();
+//        삭제 ? id = 1 & id = 2
         String[] deleteBits = command.split("\\?", 2); // deleteBits = {"삭제", "id=1&id=2"}
         actionCode = deleteBits[0]; // '삭제'가 될 거기 때문에 명령에 대한 액션코드로 사용이 가능.
+
+
+
         String[] paramBits = deleteBits[1].split("&"); // paramBits = {"id=1", "id=2"}
 
         params = new HashMap<>(); // key와 value를 처리하기 위한 HashMap 생성 및 인스턴스화.

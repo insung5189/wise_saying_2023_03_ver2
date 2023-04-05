@@ -33,11 +33,11 @@ public class App {
                 case "삭제":
                     wiseSayingController.삭제(rq);
                     break;
-                default :
+                default:
                     System.out.println("유효하지 않은 명령어 입니다. 사용 가능한 명령어를 입력해주세요");
                     break;
             }
-/*
+//
             if (rq.getActionCode().equals("종료")) { // if 문이 시작되는데, command에 종료라는 값이 입력되면,아래로직을 실행한다.
                 // .equals로 변수의 '값'을 비교해준다.
                 systemController.종료();
@@ -53,7 +53,7 @@ public class App {
                 systemController.도움말();
 
             } else if (rq.getActionCode().startsWith("삭제")) { // command에 들어간 문자열 값 중에 '삭제'라는 단어가 포함되어있으면 아래 로직을 실행해라
-                System.out.println("삭제 명령어 예시 : 삭제?id=$&id=$id=$");
+                System.out.println("삭제 명령어 예시 : 삭제?id=$ & id=$ & id=$");
                 System.out.println("$ = 삭제할 명언의 번호를 대입.(한 개도 가능)");
                 System.out.printf("삭제 명령어 입력 : ");
                 command = Container.getScanner().nextLine().trim();
@@ -67,7 +67,7 @@ public class App {
                 System.out.println("유효하지 않은 명령어 입니다. 사용 가능한 명령어를 입력해주세요");
             }
 
- */
+            //
         }
     }
 }
