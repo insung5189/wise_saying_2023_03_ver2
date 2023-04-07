@@ -25,9 +25,9 @@ public class WiseSayingController {
 
     public void 등록() {
 
-        System.out.printf("명언 : "); // '명언 : '안내문
+        System.out.print("명언 : "); // '명언 : '안내문
         String wiseSay = Container.getScanner().nextLine().trim(); // 문자열타입 wiseSaying변수에 한 줄을 입력받는 sc변수를 넣어주고 trim()으로 공백을 알아서 제거해줌.
-        System.out.printf("작가 : "); // '작가 : '안내문
+        System.out.print("작가 : "); // '작가 : '안내문
         String wiseSayingAuthor = Container.getScanner().nextLine().trim(); // 문자열타입 wiseSayingAuthor변수에 한 줄을 입력받는 sc변수를 넣어주고 trim()으로 공백을 알아서 제거해줌.
         // Container.getScanner()를 사용해서 sc대신 바로 연결해준다.
 
