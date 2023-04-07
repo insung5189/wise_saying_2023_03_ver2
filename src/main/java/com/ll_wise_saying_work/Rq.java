@@ -6,7 +6,7 @@ public class Rq {
     private String actionCode; // Rq생성자 내부에서 commandBits[0]으로 할당해서 해당 명령의 액션코드를 나타냄 (삭제?id=1 혹은 수정?id=1을 입력하면 삭제 혹은 수정 만 골라서 출력됨.)
     private HashMap<String, String> params; // 잘라놓은 문자열을 key와 value값으로 접근하기 위하여 HashMap<String, String>타입으로 params라는 변수를 선언해줌.
 
-    public Rq(String command) { // App클래스에서 command변수로 스캐너 입력받은 문자열을 처리하는 로직
+    public Rq(String command) { // App클래스에서 command변수로 스캐너 입력받은 문자열을 처리하는 로직   (==) (.equals)
         String[] commandBits = command.split("\\?", 2); // regex : regular expression(?)
         // command변수에 해당하는 문자열을 물음표 기준으로 '2'개로 나누어서 commandBits 변수에 넣겠다는 뜻 (삭제?id=1&id=2 => 삭제  ?  id=1&id=2)
         this.actionCode = commandBits[0]; // 위에서 .split을 이용해서 command변수의 문자열을 나누어서 배열에 할당하였다.
@@ -43,7 +43,8 @@ public class Rq {
 
             String key = paramsStrBits[0]; // key 명목으로 paramStrBits 배열인덱스 [0]에 접근 => 배열상 실제값 = id
             String value = paramsStrBits[1]; // value 명목으로 paramStrBits 배열인덱스 [1]에 접근 = 배열상 실제값 = 1 or 2
-            System.out.println("키 : " + key + "값 : " + value);
+            System.out.println("키 : " + key + ", 값 : " + value);
+
             params.put(key, value); // params에 키, 벨류값으로 담는 것.
                     /* 출력
                     명령(등록, 목록, 종료, 삭제, 수정) : 삭제?id=1&id=2
